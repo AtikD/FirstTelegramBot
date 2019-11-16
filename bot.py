@@ -8,11 +8,11 @@ import os
 
 
 #MONGODB
-client = MongoClient("MongoDB")
+client = MongoClient(os.environ["MongoDB"])
 db = client.UserDB
 coll = db.AllINFO
 
-bot=telebot.TeleBot("token")
+bot=telebot.TeleBot(os.environ["TELEGRAM_TOKEN"])
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
