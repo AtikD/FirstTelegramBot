@@ -59,10 +59,7 @@ def add_for_random(message):
 	bot.send_message(message.reply_to_message.chat.id,"В ближайшее время вы будете добавлены в Рандом")
 	bot.send_message(512177277,"@"+str(message.from_user.username))
 '''
-@bot.message_handler(commands=['Azik'])
-def aziku(message):
-	bot.send_message(90568337,"ПОГОВОРИТЬ НУЖНО!(от атика не пиши боту атик все равно не видит)")
-	bot.send_message(message.chat.id,"Азамату передано сообщение")
+
 
 @bot.message_handler(commands=["shipping"])
 def shipping(message):
