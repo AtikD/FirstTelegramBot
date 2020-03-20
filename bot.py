@@ -14,6 +14,8 @@ coll = db.AllINFO
 
 bot=telebot.TeleBot(os.environ["token"])
 
+bot.send_message(512177277, "Бот был перезапущен!")
+
 @bot.message_handler(commands=['start'])
 def start_message(message):
     bot.send_message(message.chat.id, 'Привет, ты написал мне /start')
