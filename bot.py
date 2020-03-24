@@ -196,8 +196,8 @@ def upgrade_(message):
 	if upgrade__!=None:
 		if upgrade__['Kirka']==1:
 			if upgrade__['money']>=100:
-				coll.update({"_id": message.from_user.id}, {"$inc": {"money":-100}} )
-				coll.update({"_id": message.from_user.id}, {"$inc": {"Kirka":1}} )
+				coll.update_one({"_id": message.from_user.id}, {"$inc": {"money":-100}} )
+				coll.update_one({"_id": message.from_user.id}, {"$inc": {"Kirka":1}} )
 				qw = coll.find_one({'_id':message.from_user.id})
 				bot.send_message(message.chat.id , "Уровень вашей кирки повышен до "+str(qw["Kirka"]))
 			else:
