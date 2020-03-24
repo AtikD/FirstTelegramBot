@@ -138,7 +138,7 @@ def choice_random(message):
 def give_money(message):
 	if message.reply_to_message!=None:
 		if message.from_user.id==512177277:
-			coll.update({"_id": message.reply_to_message.from_user.id}, {"$inc": {"money": int(message.text.split(' ')[1])}} )
+			coll.update_one({"_id": message.reply_to_message.from_user.id}, {"$inc": {"money": int(message.text.split(' ')[1])}} )
 			bot.send_message(message.chat.id,'Монеты выданы!')
 		else:
 			bot.send_message(message.chat.id,"Вы - не админ бота!!")
