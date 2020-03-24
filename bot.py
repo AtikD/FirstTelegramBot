@@ -184,10 +184,10 @@ def mining(message):
 	miningme=coll.find_one({'_id':message.from_user.id})
 	if miningme!=None:
 		if miningme['Kirka']==1:
-			coll.update({"_id": message.from_user.id}, {"$inc": {"money":1}} )
+			coll.update_one({"_id": message.from_user.id}, {"$inc": {"money":1}} )
 			bot.send_message(message.chat.id,"Вы накопали 1 монету!")
 		if miningme['Kirka']==2:
-			coll.update({"_id": message.from_user.id}, {"$inc": {"money":5}} )
+			coll.update_one({"_id": message.from_user.id}, {"$inc": {"money":5}} )
 			bot.send_message(message.chat.id,"Вы накопали 5 монет!")
 
 @bot.message_handler(commands=['upgrade'])
